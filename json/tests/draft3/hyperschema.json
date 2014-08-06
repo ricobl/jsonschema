@@ -1,0 +1,27 @@
+[
+    {
+        "description": "Hyper Schema Test with ref",
+        "schema": {
+            "$ref": "http://json-schema.org/draft-03/hyper-schema#"
+        },
+        "tests": [
+            {
+                "description": "External ref should be valid",
+                "data": {
+                    "$schema": "http://json-schema.org/draft-03/hyper-schema#",
+                    "links": [
+                        {
+                            "href": "{id}",
+                            "method": "POST",
+                            "rel": "create",
+                            "schema": {
+                                "$ref": "#"
+                            }
+                        }
+                    ]
+                },
+                "valid": true
+            }
+        ]
+    }
+]
